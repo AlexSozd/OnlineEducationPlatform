@@ -1,5 +1,4 @@
 use Edaibd;
-
 GO
 CREATE PROC ShowBestResultsByTest
 (
