@@ -1,7 +1,6 @@
 use Edaibd;
 
-/*
-CREATE TABLE dbo.TestBlocks
+/*CREATE TABLE dbo.TestBlocks
 (
    id INT NOT NULL PRIMARY KEY,
    id_page INT NOT NULL FOREIGN KEY REFERENCES dbo.Pages(id),
@@ -28,8 +27,6 @@ CREATE TABLE dbo.Users
    e_mail NVARCHAR(255) NULL,
    parole NVARCHAR(255) NOT NULL
 );
-IF OBJECT_ID('dbo.ExamResults', 'U') IS NOT NULL
-   DROP TABLE dbo.ExamResults;
 CREATE TABLE dbo.ExamResults
 (
    id INT NOT NULL PRIMARY KEY,
@@ -42,8 +39,6 @@ CREATE TABLE dbo.ExamResults
    dt DATETIME NOT NULL,
    trynum INT NOT NULL
 );
-IF OBJECT_ID('dbo.Answers', 'U') IS NOT NULL
-   DROP TABLE dbo.Answers;
 CREATE TABLE dbo.Answers
 (
    id INT NOT NULL PRIMARY KEY,
@@ -51,14 +46,6 @@ CREATE TABLE dbo.Answers
    id_bl INT NOT NULL FOREIGN KEY REFERENCES dbo.TestBlocks(id),
    id_ex INT NOT NULL FOREIGN KEY REFERENCES dbo.ExamResults(id),
    us_balls REAL NOT NULL
-);
-IF OBJECT_ID('dbo.PromptCount', 'U') IS NOT NULL
-   DROP TABLE dbo.PromptCount;
-CREATE TABLE dbo.PromptCount
-(
-   id INT NOT NULL PRIMARY KEY,
-   id_bl INT NOT NULL FOREIGN KEY REFERENCES dbo.TestBlocks(id),
-   max_num_pr INT NOT NULL
 );*/
 
 GO
