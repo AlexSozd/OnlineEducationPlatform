@@ -114,15 +114,5 @@ CREATE PROC PersonalTestAnswers
 )
 AS
   BEGIN
-    SELECT TestQuestions.ques, Answers.us_balls, TestQuestions.balls, Answers.us_ans, Answers.tr_ans FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.id_bl=TestQuestions.id_bl) WHERE id_ex=@id_ex;
-  END;
-
-GO
-CREATE PROC ShowTestTaskList
-(
-  @name AS NVARCHAR(255)
-)
-AS
-  BEGIN
-    SELECT ques FROM dbo.TestQuestions WHERE id_bl=(SELECT id_bl FROM dbo.TestBlocks WHERE name=@name);
+    SELECT * FROM dbo.Answers WHERE id_ex=@id_ex;
   END;

@@ -106,23 +106,3 @@ AS
   BEGIN
     SELECT ExamResults.id AS id, name, dt, real_balls, max_res, procnt, mark FROM (dbo.ExamResults JOIN dbo.TestBlocks ON ExamResults.id_bl=TestBlocks.id) WHERE id_us=(SELECT id FROM dbo.Users WHERE name=@usname) AND (dt>=@dt1) AND (dt<=@dt2);
   END;
-
-GO
-CREATE PROC PersonalTestAnswers
-(
-  @id_ex AS INT
-)
-AS
-  BEGIN
-    SELECT TestQuestions.ques, Answers.us_balls, TestQuestions.balls, Answers.us_ans, Answers.tr_ans FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.id_bl=TestQuestions.id_bl) WHERE id_ex=@id_ex;
-  END;
-
-GO
-CREATE PROC ShowTestTaskList
-(
-  @name AS NVARCHAR(255)
-)
-AS
-  BEGIN
-    SELECT ques FROM dbo.TestQuestions WHERE id_bl=(SELECT id_bl FROM dbo.TestBlocks WHERE name=@name);
-  END;

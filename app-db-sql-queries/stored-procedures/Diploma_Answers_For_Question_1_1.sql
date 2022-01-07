@@ -1,0 +1,48 @@
+use Edaibd;
+
+GO
+CREATE PROC ShowPeopleBestAnswerBalls
+(
+  @ques AS NVARCHAR(255)
+)
+AS
+  BEGIN
+    SELECT Answers.us_balls AS us_balls, TestQuestions.balls AS balls, Answers.us_ans AS us_ans, Answers.tr_ans AS tr_ans FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.tr_ans=TestQuestions.r_ans) WHERE ques=@ques AND
+	us_balls=(SELECT MAX(us_balls) FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.tr_ans=TestQuestions.r_ans) WHERE ques=@ques);
+  END;
+GO
+CREATE PROC ShowUserBestAnswerBall
+(
+  @usname AS NVARCHAR(100),
+  @ques AS NVARCHAR(255)
+)
+AS
+  BEGIN
+    SELECT Answers.us_balls AS us_balls, TestQuestions.balls AS balls, Answers.us_ans AS us_ans, Answers.tr_ans AS tr_ans FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.tr_ans=TestQuestions.r_ans) WHERE id_us=(SELECT id FROM dbo.Users WHERE name=@usname) AND ques=@ques AND
+	us_balls=(SELECT MAX(us_balls) FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.tr_ans=TestQuestions.r_ans) WHERE id_us=(SELECT id FROM dbo.Users WHERE name=@usname) AND ques=@ques);
+  END;
+GO
+CREATE PROC ShowPeopleBestAnswerBallsForTimePeriod
+(
+  @ques AS NVARCHAR(255),
+  @dt1 AS DATE,
+  @dt2 AS DATE
+)
+AS
+  BEGIN
+    SELECT Answers.us_balls AS us_balls, TestQuestions.balls AS balls, Answers.us_ans AS us_ans, Answers.tr_ans AS tr_ans FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.tr_ans=TestQuestions.r_ans) WHERE ques=@ques AND dt>=@dt1 AND dt<=@dt2 AND
+	us_balls=(SELECT MAX(us_balls) FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.tr_ans=TestQuestions.r_ans) WHERE ques=@ques AND dt>=@dt1 AND dt<=@dt2);
+  END;
+GO
+CREATE PROC ShowUserBestAnswerBallForTimePeriod
+(
+  @usname AS NVARCHAR(100),
+  @ques AS NVARCHAR(255),
+  @dt1 AS DATE,
+  @dt2 AS DATE
+)
+AS
+  BEGIN
+    SELECT Answers.us_balls AS us_balls, TestQuestions.balls AS balls, Answers.us_ans AS us_ans, Answers.tr_ans AS tr_ans FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.tr_ans=TestQuestions.r_ans) WHERE id_us=(SELECT id FROM dbo.Users WHERE name=@usname) AND ques=@ques AND dt>=@dt1 AND dt<=@dt2 AND
+	us_balls=(SELECT MAX(us_balls) FROM (dbo.Answers JOIN dbo.TestQuestions ON Answers.tr_ans=TestQuestions.r_ans) WHERE id_us=(SELECT id FROM dbo.Users WHERE name=@usname) AND ques=@ques AND dt>=@dt1 AND dt<=@dt2);
+  END;
