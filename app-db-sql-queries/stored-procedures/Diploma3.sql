@@ -1,17 +1,17 @@
 use Edaibd;
-go
+GO
 CREATE PROC GetLesFirPage
 (
   @id_lesson AS INT
 )
 AS
   BEGIN
-  SELECT MIN(id) FROM Pages WHERE id_les=@id_lesson;
+    SELECT MIN(id) FROM Pages WHERE id_les=@id_lesson;
   END;
-  GO
+GO
 CREATE PROC PagesCount1
 AS
   BEGIN
-  SELECT COUNT(*) FROM Pages;
+    SELECT COUNT(*) FROM Pages;
   END;
-  GO
+GO
