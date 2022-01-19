@@ -1,5 +1,6 @@
 use Edaibd;
 GO
+
 /*CREATE TABLE dbo.TestBlocks
 (
    id INT NOT NULL PRIMARY KEY,
@@ -38,6 +39,7 @@ CREATE TABLE dbo.ExamResults
    max_res REAL NOT NULL,
    dt DATETIME NOT NULL
 );*/
+
 CREATE PROC FindTestBlock
 (
   @id_page AS INT
