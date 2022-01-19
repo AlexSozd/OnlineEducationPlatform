@@ -46,7 +46,7 @@ CREATE PROC FindTestBlock
 )
 AS
   BEGIN
-  SELECT id, name FROM TestBlocks WHERE id_page=@id_page;
+    SELECT id, name FROM TestBlocks WHERE id_page=@id_page;
   END;
 
 GO
@@ -56,7 +56,7 @@ CREATE PROC GetTestBlock
 )
 AS
   BEGIN
-  SELECT id, ques, im_file, var1, var2, var3, var4, r_ans, balls FROM TestQuestions WHERE id_bl=@id_bl;
+    SELECT id, ques, im_file, var1, var2, var3, var4, r_ans, balls FROM TestQuestions WHERE id_bl=@id_bl;
   END;
 
 /*GO
@@ -120,7 +120,7 @@ CREATE PROC ShowUserResults1
 AS
   BEGIN
     --SELECT id, mark, real_balls, max_res, dt FROM (dbo.ExamResults JOIN dbo.Users ON ExamResults.id_us=Users.id) WHERE name=@usname;
-	SELECT id, mark, real_balls, max_res, dt FROM dbo.ExamResults WHERE id_us=(SELECT id FROM dbo.Users WHERE name=@usname);
+    SELECT id, mark, real_balls, max_res, dt FROM dbo.ExamResults WHERE id_us=(SELECT id FROM dbo.Users WHERE name=@usname);
   END;
 
 GO
@@ -133,5 +133,5 @@ AS
   BEGIN
     DECLARE @i AS INT
     SET @i = (SELECT MAX(id)+1 FROM Users);
-	RETURN @i;
+    RETURN @i;
   END;*/
