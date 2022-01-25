@@ -1,7 +1,5 @@
 use Edaibd;
-
-/*
-CREATE TABLE dbo.TestBlocks
+/*CREATE TABLE dbo.TestBlocks
 (
    id INT NOT NULL PRIMARY KEY,
    id_page INT NOT NULL FOREIGN KEY REFERENCES dbo.Pages(id),
