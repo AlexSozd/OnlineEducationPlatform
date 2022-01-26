@@ -1,12 +1,12 @@
 use Edaibd;
 
 INSERT INTO dbo.Terms(id, name, fname) VALUES
-                   (3, 'Альмукантараты', 'Eddata/Glossary1/Almucantars.pdf'),
-				   (4, 'Апогей', 'Eddata/Glossary1/Apogee.pdf'),
-				   (8, 'Астрономия', 'Eddata/Glossary1/Astronomy.pdf'),
-				   (25, 'Высота светила', 'Eddata/Glossary1/Celalt.pdf'),
-				   (26, 'Высотная линия положения (ВЛП)', 'Eddata/Glossary1/ALP.pdf'),
-				   (58, 'Линия апсид', 'Eddata/Glossary1/Apsides.pdf'),
-				   (71, 'Небесная сфера', 'Eddata/Glossary1/Coelosphere.pdf'),
-				   (104, 'Созвездия', 'Eddata/Glossary1/Constellations.pdf'),
-				   (127, 'Эра', 'Eddata/Glossary1/Age.pdf');
+                   (3, 'РђР»СЊРјСѓРєР°РЅС‚Р°СЂР°С‚С‹', 'Eddata/Glossary1/Almucantars.pdf'),
+		   (4, 'РђРїРѕРіРµР№', 'Eddata/Glossary1/Apogee.pdf'),
+		   (8, 'РђСЃС‚СЂРѕРЅРѕРјРёСЏ', 'Eddata/Glossary1/Astronomy.pdf'),
+		   (25, 'Р’С‹СЃРѕС‚Р° СЃРІРµС‚РёР»Р°', 'Eddata/Glossary1/Celalt.pdf'),
+		   (26, 'Р’С‹СЃРѕС‚РЅР°СЏ Р»РёРЅРёСЏ РїРѕР»РѕР¶РµРЅРёСЏ (Р’Р›Рџ)', 'Eddata/Glossary1/ALP.pdf'),
+		   (58, 'Р›РёРЅРёСЏ Р°РїСЃРёРґ', 'Eddata/Glossary1/Apsides.pdf'),
+		   (71, 'РќРµР±РµСЃРЅР°СЏ СЃС„РµСЂР°', 'Eddata/Glossary1/Coelosphere.pdf'),
+		   (104, 'РЎРѕР·РІРµР·РґРёСЏ', 'Eddata/Glossary1/Constellations.pdf'),
+		   (127, 'Р­СЂР°', 'Eddata/Glossary1/Age.pdf');
